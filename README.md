@@ -90,6 +90,7 @@ pry(main)> team.roster
 #=> [#<Player:0x00007fa53b9ca0a8...>, #<Player:0x00007fccd2985f48...>]
 
 pry(main)> team.player_count
+
 #=> 2
 ```
 
