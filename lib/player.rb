@@ -16,4 +16,8 @@ attr_reader :first_name,
    def total_cost
      @monthly_cost * @contract_length
    end 
+
+   def set_nickname!(nickname)
+     @nickname = nickname
+   end 
 end 

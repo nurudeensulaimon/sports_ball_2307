@@ -23,6 +23,10 @@ RSpec.describe Player do
     it "has a nickname that is nil" do
     expect(@player.nickname).to eq(nil)
     end
+
+    it "has set_nickname method" do 
+      expect(@player.set_nickname!("Squints")).to eq("Squints")
+    end 
  end 
 
 
