@@ -2,7 +2,7 @@ require './lib/player'
 
 RSpec.describe Player do 
   before(:each) do 
-@player = Player.new("Michael Palledorous" , 1000000, 36) 
+    @player = Player.new("Michael Palledorous" , 1000000, 36) 
   end 
 
    it "exists as an instance" do 
@@ -15,6 +15,15 @@ RSpec.describe Player do
     expect(@player.monthly_cost).to eq(1000000)
     expect(@player.contract_length).to eq(36)
    end 
+
+    it "has a method #totalcost" do
+      expect(@player.total_cost).to eq(36000000)
+    end 
+
+    it "has a nickname that is nil" do
+    expect(@player.nickname).to eq(nil)
+    end
  end 
+
 
 
