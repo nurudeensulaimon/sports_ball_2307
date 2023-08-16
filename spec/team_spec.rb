@@ -91,4 +91,23 @@ RSpec.describe Team do
     expect(@team.details).to eq(expected_hash)
   end 
 
+  it "adds a #average_cost_of_player " do 
+
+    @team.add_player(@player_1)
+    @team.add_player(@player_2)
+    @team.add_player(@player_3)
+    @team.add_player(@player_4)
+
+    expect(@team.average_cost_of_player).to eq("$21,300,000")
+  end 
+
+  it "has a #players_by_last_name" do
+
+    @team.add_player(@player_1)
+    @team.add_player(@player_2)
+    @team.add_player(@player_3)
+    @team.add_player(@player_4)
+
+    expect(@team.players_by_last_name).to eq(["DeNunez","McClennan","Palledorous","Porter"])
+  end 
 end 

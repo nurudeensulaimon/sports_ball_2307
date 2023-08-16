@@ -21,13 +21,6 @@ attr_reader :name,
   def long_term_players
     @roster.find_all do |player|
       player.contract_length > 24
-    #binding.pry
-    end
-  end 
-
-  def long_term_players
-    @roster.find_all do |player|
-      player.contract_length > 24
     end
   end 
 
@@ -53,10 +46,25 @@ attr_reader :name,
         {"total_value" => total_value,
         "player_count" => player_count}
       end 
-  end 
 
-      
+     def average_cost_of_player
+        average_cost = (total_value / player_count).digits
+        cost = ""
+        average_cost.each.with_index do |digit, index|
+        cost = digit.to_s + cost 
+        if (index % 3 == 2)
+            cost = "," + cost
+        end 
+     end 
 
-  
-  
-  
+        "$#{cost}"
+    end 
+     
+    def players_by_last_name 
+      names = []
+      @roster.each do |player|
+      names << player.last_name.to_s 
+      end 
+      names.sort 
+    end 
+  end
